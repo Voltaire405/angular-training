@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col">
+  <shared-searchbox (onValue)="onValueEventHandler($event)"
+  placeholder="Buscar por Pais"></shared-searchbox>
+  </div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col">
+
+    <div *ngIf="countries.length === 0; else table" class="alert alert-warning" role="alert">
+      <strong> No hay Países para mostrar... </strong>
+    </div>
+
+    <ng-template #table>
+      <app-countries-table [countries]="countries"></app-countries-table>
+    </ng-template>
+
+  </div>
+</div>
